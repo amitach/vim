@@ -122,4 +122,22 @@ noremap <right> <nop>
 noremap <up> <nop>
 noremap <down> <nop>
 
+"set foldlevelstart=0
+nnoremap <space> za
+vnoremap <space> za
 
+" function! RubyMethodFold(line)
+"   let stack = synstack(a:line, (match(getline(a:line), '^\s*\zs'))+1)
+
+"   for synid in stack
+"     if GetSynString(GetSynDict(synid)) ==? "rubyMethodBlock" || GetSynString(GetSynDict(synid)) ==? "rubyDefine" || GetSynString(GetSynDict(synid)) ==? "rubyDocumentation"
+"       return 1
+"     endif
+"   endfor
+
+"   return 0
+" endfunction
+
+" set foldexpr=RubyMethodFold(v:lnum)
+
+"set foldmethod=expr

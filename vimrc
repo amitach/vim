@@ -33,12 +33,19 @@ set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 set expandtab
+set wrap
+set linebreak
+set showbreak=>\
 set nu
 set noswapfile
 set hidden
 set cursorline
 set ignorecase
 set incsearch
+set scrolloff=5
+set wildmenu
+set undofile
+"let g:ruby_fold = 1
 let mapleader= ","
 
 filetype plugin indent on     " required! 
@@ -46,6 +53,19 @@ syntax on
 set backspace=indent,eol,start
 let g:ackprg = 'ag --nogroup --nocolor --column'
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_symbols.space = "\ua0"
+let g:Powerline_symbols = 'fancy'
+set encoding=utf-8
+set t_Co=256
+set fillchars+=stl:\ ,stlnc:\
+let g:Powerline_mode_V="V·LINE"
+let g:Powerline_mode_cv="V·BLOCK"
+let g:Powerline_mode_S="S·LINE"
+let g:Powerline_mode_cs="S·BLOCK"
 set laststatus=2
 cmap w!! %!sudo tee > /dev/null %
 set background=light
@@ -79,8 +99,8 @@ let g:rspec_command = "compiler rspec | set makeprg=zeus | Make rspec {spec}"
 set tags=./tags,tags;$HOME"
 set diffopt+=vertical
 "Nerdtree
-autocmd VimEnter * NERDTree
-autocmd VimEnter * wincmd p
+"autocmd VimEnter * NERDTree
+"autocmd VimEnter * wincmd p
 
 
 "============= FROM VIMCASTS ========="
@@ -97,5 +117,9 @@ set listchars=tab:▸\ ,eol:¬
 map <Leader>v  :so /Users/zoomcar/.vimrc<CR>
 nmap <F7> :NERDTreeToggle<CR>
 nmap <S-F7> :NERDTreeClose<CR>
+noremap <left> <nop>
+noremap <right> <nop>
+noremap <up> <nop>
+noremap <down> <nop>
 
 
